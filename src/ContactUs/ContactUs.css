@@ -1,23 +1,30 @@
 form {
   border-radius: 20px;
   padding: 40px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
   width: 320px;
-  background-color: #f8f9fa;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  color: #e0f7ff;
 }
 
+/* Título con efecto glow */
 h2 {
   text-align: center;
-  color: #343a40;
+  color: #00ffe7;
   font-size: 32px;
+  text-shadow: 0 0 8px #00ffe7;
 }
 
 p {
   text-align: center;
-  color: #6c757d;
+  color: #9ae8ff;
   margin-bottom: 25px;
+  font-size: 14px;
 }
 
+/* Sin borde, solo espacio */
 fieldset {
   border: none;
   margin-bottom: 20px;
@@ -26,24 +33,32 @@ fieldset {
 label {
   display: block;
   margin-bottom: 6px;
-  color: #495057;
+  color: #a8eaff;
   font-weight: 600;
+  text-shadow: 0 0 4px #00ffe7;
 }
 
+/* Inputs futuristas */
 input, textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ced4da;
+  border: 1px solid #00ffe7;
   border-radius: 6px;
   font-size: 14px;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #b8ffff;
 }
 
 input:focus, textarea:focus {
-  border-color: #0d6efd;
+  border-color: #00ffee;
   outline: none;
-  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+  box-shadow: 0 0 8px #00ffe7;
 }
 
 textarea {
@@ -51,24 +66,27 @@ textarea {
   height: 120px;
 }
 
+/* Botón estilo neón */
 button {
   width: 100%;
   padding: 12px;
-  background-color: #0d6efd;
-  color: #ffffff;
+  background: linear-gradient(90deg, #00ffe7, #0088ff);
+  color: #000;
   border: none;
   border-radius: 50px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px #00ffe7;
 }
 
 button:hover {
-  background-color: #198754;
-  transform: scale(1.02);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffe7;
 }
 
+/* Alerta con estilo de luz */
 #divAlert {
   width: 320px;
   height: 38px;
@@ -77,8 +95,9 @@ button:hover {
   left: 5px;
   border-radius: 0 20px 20px 0;
   font-size: 18px;
-  color: white;
-  background-color: #dc3545;
+  color: #fff;
+  background: linear-gradient(90deg, #ff004c, #ff6b6b);
+  box-shadow: 0 0 10px #ff004c;
   padding: 5px 10px;
   display: flex;
   align-items: center;

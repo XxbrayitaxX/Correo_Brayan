@@ -1,51 +1,73 @@
+/* Fondo general futurista */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #f0f4f8;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  color: #f8f8f8;
 }
 
+/* Logo con efecto glow + animación */
 .logo {
-  height: 5em;
-  padding: 1em;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  height: 6em;
+  padding: 1.5em;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: drop-shadow(0 0 1em #00ffe7);
 }
 .logo:hover {
-  filter: drop-shadow(0 0 1.5em #4e9effaa);
-  transform: scale(1.1);
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 2em #00ffe7);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 1.5em #61dafb);
-  transform: rotate(10deg) scale(1.1);
+  filter: drop-shadow(0 0 2em #61dafb);
+  transform: scale(1.2) rotate(10deg);
 }
 
-@keyframes logo-bounce {
-  0%, 100% {
-    transform: translateY(0px);
+/* Animación tipo onda */
+@keyframes glow-pulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0.5em #00ffe7);
   }
   50% {
-    transform: translateY(-10px);
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 1.5em #00ffee);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0.5em #00ffe7);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-bounce 2s ease-in-out infinite;
+    animation: glow-pulse 2.5s infinite ease-in-out;
   }
 }
 
+/* Card futurista con luz y sombra */
 .card {
   padding: 2em;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
   margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
 }
 
+/* Texto más estilizado */
 .read-the-docs {
-  color: #6c757d;
+  color: #9ae8ff;
   font-style: italic;
+  font-size: 1rem;
+  text-shadow: 0 0 3px #00ffe7;
 }
